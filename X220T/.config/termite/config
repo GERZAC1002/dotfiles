@@ -1,0 +1,52 @@
+[colors]
+# Default colours
+# Author: Gernot Zacharias
+
+foreground          = #FFFFFF
+foreground_bold     = #FFFFFF
+cursor              = #FFFFFF
+cursor_foreground   = #FFFFFF
+background          = rgba(0, 0, 0,0.9)
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = rgba(0, 0, 0,0.9)
+color8  = #585858
+color7  = #d8d8d8
+color15 = #FFFFFF
+
+# Red
+color1  = #FF0000
+color9  = #FF0000
+
+# Green
+color2  = #00FF00
+color10 = #00FF00
+
+# Yellow
+color3  = #FFFF00
+color11 = #FFFF00
+
+# Blue
+color4  = #0000FF
+color12 = #0000FF
+
+# Purple
+color5  = #FF00FF
+color13 = #FF00FF
+
+# Teal
+color6  = #00FFFF
+color14 = #00FFFF
+
+# Extra colors
+color16 = #dc9656
+color17 = #a16946
+color18 = #282828
+color19 = #383838
+color20 = #b8b8b8
+color21 = #e8e8e8
+
+[options]
+font = inconsolata 8
