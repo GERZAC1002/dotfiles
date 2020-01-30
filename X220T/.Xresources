@@ -8,7 +8,7 @@ URxvt.keysym.End: \033[4~
 URxvt.keysym.KP_Home: \033[1~
 URxvt.keysym.KP_End:  \033[4~
 URxvt.font : xft:Inconsolata:pixelsize=14
-URxvt*background: [70]#000000
+URxvt*background: [80]#000000
 URxvt*foreground: #FFFFFF
 URxvt*.depth: 32
 URxvt*.intensityStyles: true

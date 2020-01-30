@@ -2,17 +2,19 @@ set $mod Mod1
 font pango:monospace 8
 floating_modifier $mod
 
-exec_always pkill conky
+exec_always --no-startup-id xrdb -load $HOME/.Xresources
+exec --no-startup-id conky
 
 bindsym --release XF86RotateWindows exec --no-startup-id sh /home/gernot/.config/i3/rotate.sh
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
-bindsym $mod+Return exec termite
+#bindsym $mod+Return exec termite
+bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec rofi -combi-modi run#ssh -theme Indego -font "inconsolata 15" -show combi
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -39,10 +41,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -79,7 +81,6 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -91,21 +92,11 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'pkill i3'"
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -125,10 +116,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bindsym Control+mod1+l exec i3lock -f -u -c 000000
 bindsym $mod+g exec galculator
-exec_always feh --image-bg white --bg-center --bg-scale /home/gernot/.config/i3/bg.jpg
-exec_always xset s off
-exec_always xset -b
-exec_always xcompmgr
+#exec_always feh --image-bg white --bg-center --bg-scale /home/gernot/.config/i3/bg.jpg
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -b
+exec_always --no-startup-id xcompmgr
 
 bar {
 
@@ -138,6 +129,7 @@ bar {
    #mode              hide
    #workspace_buttons yes
    tray_output       primary
+   font xft:Inconsolata 10
    #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
    colors {
@@ -156,7 +148,7 @@ client.urgent           #095b67 #095b67 #ffffff #900000
 
 default_border none
 default_floating_border none
-#new_window 1pixels
+new_window 1pixel
 hide_edge_borders both
 gaps inner 20
 gaps outer 5
@@ -164,9 +156,9 @@ gaps outer 5
 #exec_always setxkbmap -layout "de,ru" -option "grp:ctrl_alt_shift_toggle"
 bindsym $mod+Ctrl+2 exec "setxkbmap -layout ru"
 bindsym $mod+Ctrl+1 exec "setxkbmap -layout de"
-exec onboard
-exec cellwriter
-exec_always  conky
+exec --no-startup-id onboard
+exec --no-startup-id cellwriter
+exec --no-startup-id $HOME/.config/i3/wallpaper.sh
 #exec_always xinput --map-to-output 'Wacom ISDv4 E6 Pen stylus' LVDS-1
 #exec_always xinput --map-to-output 'Wacom ISDv4 E6 Pen stylus' LVDS1
 #exec_always xinput --map-to-output 'Wacom ISDv4 E6 Finger touch' LVDS-1
