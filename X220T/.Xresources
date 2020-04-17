@@ -7,13 +7,12 @@ URxvt.keysym.Home: \033[1~
 URxvt.keysym.End: \033[4~
 URxvt.keysym.KP_Home: \033[1~
 URxvt.keysym.KP_End:  \033[4~
-URxvt.font : xft:Inconsolata:pixelsize=14
 URxvt*background: [80]#000000
 URxvt*foreground: #FFFFFF
 URxvt*.depth: 32
 URxvt*.intensityStyles: true
 URxvt*iso14755: False
-URxvt*colorUL: #FFFFFF0
+URxvt*colorUL: #FFFFFF
 *.saveLines : 4096
 *.scrollBar : false
 *.dynamicColors : true

@@ -1,6 +1,7 @@
 set $mod Mod1
 font pango:monospace 8
 floating_modifier $mod
+focus_follows_mouse no
 
 exec_always --no-startup-id xrdb -load $HOME/.Xresources
 exec --no-startup-id conky
@@ -135,30 +136,35 @@ bar {
    colors {
        background #021012
        statusline #00FF00
-       focused_workspace  #ffffff #095b67
-       active_workspace   #ffffff #0c7c8c
-       inactive_workspace #ffffff #021012
-       urgent_workspace   #ffffff #109cb0
+       focused_workspace  #00FF00 #000000 #ffff00
+       active_workspace   #0000ff #000000 #00ff00
+       inactive_workspace #ff0000 #000000 #00ffff
+       urgent_workspace   #ffffff #000000 #ff0000
    }
 }
-client.focused          #00bcd4 #00bcd4 #ffffff #ffffff
-client.focused_inactive #00bcd4 #00bcd4 #ffffff #ffffff
-client.unfocused        #095b67 #095b67 #ffffff #ffffff
+# class                 border  backgr. text    indicator child_border
+client.focused          #00ff00 #000000 #FFFF00 #FF0000   #00ff00
+client.focused_inactive #0000ff #000000 #00FF00 #ff0000   #0000ff
+client.unfocused        #00ffff #000000 #ffffff #ffffff   #00ffff
 client.urgent           #095b67 #095b67 #ffffff #900000
 
-default_border none
-default_floating_border none
-new_window 1pixel
-hide_edge_borders both
-gaps inner 20
-gaps outer 5
+title_align center
+#default_border none
+#default_floating_border none
+#new_window 1pixel
+#hide_edge_borders both
+#gaps inner 20
+#gaps outer 5
 
 #exec_always setxkbmap -layout "de,ru" -option "grp:ctrl_alt_shift_toggle"
 bindsym $mod+Ctrl+2 exec "setxkbmap -layout ru"
 bindsym $mod+Ctrl+1 exec "setxkbmap -layout de"
-exec --no-startup-id onboard
-exec --no-startup-id cellwriter
+#exec --no-startup-id onboard
+#exec --no-startup-id cellwriter
 exec --no-startup-id $HOME/.config/i3/wallpaper.sh
+exec --no-startup-id nm-applet
+#exec --no-startup-id xrandr --output LVDS-1-1 --auto --primary && xrandr --output DVI-D-0 --off
+#exec --no-startup-id xrandr --output LVDS-1 --auto --primary
 #exec_always xinput --map-to-output 'Wacom ISDv4 E6 Pen stylus' LVDS-1
 #exec_always xinput --map-to-output 'Wacom ISDv4 E6 Pen stylus' LVDS1
 #exec_always xinput --map-to-output 'Wacom ISDv4 E6 Finger touch' LVDS-1
