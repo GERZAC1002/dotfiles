@@ -1,5 +1,5 @@
-set $mod Mod1
-font pango:monospace 8
+set $mod Mod4
+font pango:Spleen 32x64
 floating_modifier $mod
 focus_follows_mouse no
 
@@ -13,7 +13,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 #bindsym $mod+Return exec termite
 bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'Spleen 32x64'
 #bindsym $mod+d exec rofi -combi-modi run#ssh -theme Indego -font "inconsolata 15" -show combi
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
@@ -130,7 +130,7 @@ bar {
    #mode              hide
    #workspace_buttons yes
    tray_output       primary
-   font xft:Inconsolata 10
+   #font "xft:Spleen 32x62:pixelsize=10"
    #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
    colors {
