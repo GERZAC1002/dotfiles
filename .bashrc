@@ -120,7 +120,7 @@ fi
 [ -r /home/server02/.config/byobu/prompt ] && . /home/server02/.config/byobu/prompt   #byobu-prompt#
 PATH=$PATH:/usr/games/
 export PATH
-export PS1="\[\033[38;5;2m\]$(batstat)% Akku \[\033[38;5;14m\]$(date) \[\033[38;5;9m\]\n\u\[$(tput sgr0)\]\[\033[38;5;2m\]@\[$(tput sgr0)\]\[\033[38;5;14m\]\h\[$(tput sgr0)\]\[\033[38;5;14m\] \[$(tput sgr0)\]\[\033[38;5;9m\]\\w\[\033[38;5;15m\] \[\033[38;5;14m\]\\$\[$(tput sgr0)\] "
+export PS1="\[\033[38;5;2m\]$(date) \[\033[38;5;9m\]\n\[$(tput sgr0)\][\[$(tput sgr0)\]\[\033[38;5;14m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]>\[$(tput sgr0)\] "
 if [ $(tty) == /dev/tty2 ];then
 	alsamixer
 fi
@@ -135,3 +135,4 @@ csvview(){
 #if  [ ! $TMUX  ]; then
 #	tmux && exit
 #fi
+export VISUAL="vim"
