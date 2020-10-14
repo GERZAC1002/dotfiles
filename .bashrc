@@ -56,11 +56,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
+#if [ "$color_prompt" = yes ]; then
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -120,7 +120,7 @@ fi
 [ -r /home/server02/.config/byobu/prompt ] && . /home/server02/.config/byobu/prompt   #byobu-prompt#
 PATH=$PATH:/usr/games/
 export PATH
-export PS1="\[\033[38;5;2m\]$(date) \[\033[38;5;9m\]\n\[$(tput sgr0)\][\[$(tput sgr0)\]\[\033[38;5;14m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]>\[$(tput sgr0)\] "
+export PS1="\[\033[38;5;2m\]$(date)\n\[$(tput sgr0)\][\[$(tput sgr0)\]\[\033[38;5;36m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;2m\]\h\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;36m\]\w\[$(tput sgr0)\]>\[$(tput sgr0)\]\033[38;5;36m\] "
 if [ $(tty) == /dev/tty2 ];then
 	alsamixer
 fi
