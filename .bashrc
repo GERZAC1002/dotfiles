@@ -120,7 +120,7 @@ fi
 [ -r /home/server02/.config/byobu/prompt ] && . /home/server02/.config/byobu/prompt   #byobu-prompt#
 PATH=$PATH:/usr/games/
 export PATH
-export PS1="\[\033[38;5;2m\]$(date)\n\[$(tput sgr0)\][\[$(tput sgr0)\]\[\033[38;5;14m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]>\[$(tput sgr0)\]\033[38;5;5m\] "
+export PS1="\[\033[38;5;2m\]$(date)\n\[$(tput sgr0)\][\[$(tput sgr0)\]\[\033[38;5;14m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]>\[$(tput sgr0)\] "
 if [ $(tty) == /dev/tty2 ];then
 	alsamixer
 fi
