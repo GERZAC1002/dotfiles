@@ -1,0 +1,22 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintfull
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
+URxvt*background: [70]#000000
+URxvt*foreground: #FFFFFF
+URxvt*.depth: 32
+URxvt*.intensityStyles: true
+URxvt*iso14755: False
+URxvt*colorUL: #FFFFFF
+!URxvt*font: xft:IBM Plex Mono SemiBold:pixelsize=12:antialias=true
+URxvt*font: xft:Spleen:pixelsize=16:antialias=false
+!URxvt*font: xft:Inconsolata Medium
+*.saveLines : 4096
+*.scrollBar : false
+*.dynamicColors : true
+*.multiScroll : true
