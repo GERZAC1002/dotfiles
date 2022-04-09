@@ -6,6 +6,9 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+LS_COLORS=$LS_COLORS:'di=1;33:'
+export LS_COLORS
+alias ls='ls --color'
 alias vim=nvim
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 alias ll='ls -alF'
