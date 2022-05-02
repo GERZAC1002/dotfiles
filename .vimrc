@@ -41,8 +41,40 @@ set wildmode=longest,list
 set wildmenu
 set cursorline
 set ttyfast
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 set title
+
+
+let g:currentmode={
+	\ 'n'		:	'NORMAL',
+	\ 'v'		:	'VISUELL',
+	\ 'V'		:	'VZEILE',
+	\ "\<C-V>"	:	'VBLOCK',
+	\ 'i'		:	'EINFÜGEN',
+	\ 'R'		:	'ERSETZEN',
+	\ 'Rv'		:	'VERSETZEN',
+	\ 'c'		:	'KOMMANDO',
+	\}
+
+"set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+highlight StatuslineFilename ctermfg=Black ctermbg=Cyan
+highlight StatuslineLineNr ctermfg=White ctermbg=Black
+highlight StatuslineClear ctermbg=NONE
+
+set statusline=
+set statusline+=%#StatuslineFilename#
+"set statusline+=\ %{mode()}
+set statusline+=\[%{toupper(g:currentmode[mode()])}\]
+set statusline+=\ %.40F
+set statusline+=%m\ 
+set statusline+=%#StatuslineClear#
+set statusline+=%=
+set statusline+=%#StatuslineLineNr#
+set statusline+=\ \[HEX=0x%06B\]
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %03p%%
+set statusline+=\ %03l:%03c
+"set statusline+=\
 
 "File encoding
 set encoding=utf-8
