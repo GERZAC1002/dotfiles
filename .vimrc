@@ -40,9 +40,10 @@ set cc=80
 set wildmode=longest,list
 set wildmenu
 set cursorline
+"set cursorcolumn
 set ttyfast
 set title
-
+set noshowmode
 
 let g:currentmode={
 	\ 'n'		:	'NORMAL',
