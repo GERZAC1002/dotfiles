@@ -58,13 +58,15 @@ let g:currentmode={
 
 "set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 highlight StatuslineFilename ctermfg=Black ctermbg=Cyan
+highlight StatuslineMode ctermfg=Black ctermbg=Red
 highlight StatuslineLineNr ctermfg=White ctermbg=Black
 highlight StatuslineClear ctermbg=NONE
 
 set statusline=
-set statusline+=%#StatuslineFilename#
 "set statusline+=\ %{mode()}
+set statusline+=%#StatuslineMode#
 set statusline+=\[%{toupper(g:currentmode[mode()])}\]
+set statusline+=%#StatuslineFilename#
 set statusline+=\ %.40F
 set statusline+=%m\ 
 set statusline+=%#StatuslineClear#
@@ -92,8 +94,8 @@ syntax enable
 set noswapfile
 
 "Colour settings
-"set background=light
-"color desert
+"set background=light "light theme
+"colorscheme morning "light theme
 highlight Comment ctermfg=6
 highlight LineNr ctermfg=11
 highlight cCommentString ctermfg=6
@@ -102,6 +104,6 @@ hi SpecialKey ctermfg=grey
 "set background=dark
 
 "Plugins
-call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
+"call plug#begin()
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"call plug#end()
