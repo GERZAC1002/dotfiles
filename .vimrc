@@ -76,7 +76,7 @@ set statusline+=\ \[HEX=0x%06B\]
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %03p%%
-set statusline+=\ %03l:%03c
+set statusline+=\ %03l:%03L:%03c
 "set statusline+=\
 
 "File encoding
