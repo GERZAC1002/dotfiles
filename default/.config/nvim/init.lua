@@ -28,18 +28,21 @@ vim.opt.showmode = false
 vim.opt.background = "dark"
 vim.api.nvim_exec(
 [[
-	highlight Normal ctermbg = 232
 	highlight Comment ctermfg = 39
-	highlight LineNr ctermfg = 8
+	highlight LineNr ctermfg = 8 ctermbg = 232
 	highlight cCommentString ctermfg = 6
 	highlight cComment ctermfg = 6
 	highlight SpecialKey ctermfg = 55
 	highlight String ctermfg = 49
-	highlight Constant ctermfg = 201
-	highlight CursorLineNr ctermfg = 14 
+	highlight Constant ctermfg = 34
+	highlight CursorLineNr ctermfg = 14 ctermbg = 232
 	highlight Whitespace ctermfg = 24
 	highlight Identifier ctermfg = 86
 	highlight Statement ctermfg = 46
+	highlight ColorColumn ctermbg = 24
+	highlight StorageClass ctermfg = 154
+	highlight cDefine ctermfg = 34
+	highlight Number ctermfg = 51
 ]], false)
 
 
