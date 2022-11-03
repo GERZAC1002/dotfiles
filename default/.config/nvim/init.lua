@@ -71,7 +71,7 @@ local mode_t = {
 	['t'] = 'TERMINAL'
 }
 
-local function load_mode()
+function load_mode()
 	local m = vim.api.nvim_get_mode().mode
 	if mode_t[m] == nil then return m end
 	return mode_t[m]
@@ -85,21 +85,25 @@ vim.api.nvim_exec(
 	highlight StatuslineClear ctermbg=NONE
 ]], false)
 
-local statusline = {
-	'%#StatuslineMode#', -- colour
-	'[',
-	load_mode(), -- Current mode eg. Insert, Normal, etc
-	']',
-	'%#StatuslineFilename#', -- colour
-	' %.40F', --Filename until length of 40
-	'%m',
-	'%#StatuslineClear#',
-	'%=',
-	'%#StatuslineLineNr#',
-	'[HEX=0x%06B]',
-	' [%{&fileencoding?&fileencoding:&encoding}]',
-	' [%{&fileformat}]',
-	' [%03p%%]',
-	' [%03l:%03L:%03c]'
-}
-vim.opt.statusline = table.concat(statusline)
+function status_line()
+	return table.concat {
+		'%#StatuslineMode#', -- colour
+		'[',
+		--	load_mode(), -- Current mode eg. Insert, Normal, etc
+		load_mode(), 
+		']',
+		'%#StatuslineFilename#', -- colour
+		' %.40F', --Filename until length of 40
+		'%m',
+		'%#StatuslineClear#',
+		'%=',
+		'%#StatuslineLineNr#',
+		'[HEX=0x%06B]',
+		' [%{&fileencoding?&fileencoding:&encoding}]',
+		' [%{&fileformat}]',
+		' [%03p%%]',
+		' [%03l:%03L:%03c]'
+	}
+end
+
+vim.opt.statusline = "%!luaeval('status_line()')"
